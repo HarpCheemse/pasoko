@@ -1,4 +1,3 @@
-// CHANGE LCD TO 0X27 BEFORE UPLOAD
 #include <Keypad.h>
 #include <LiquidCrystal_I2C.h>
 
@@ -120,22 +119,6 @@ extern TestController testCtrl;
 extern MathMasterContext mathContext;
 extern NumberContext numberContext;
 
-// CONTROLLERS
-
-// ------------------------------------------------------------
-// TestController
-// ------------------------------------------------------------
-// Handles the countdown timer, 7-segment display animation,
-// and LED feedback for correct/incorrect answers.
-//
-// Responsibilities:
-// 1. Manage a countdown timer for each question
-// 2. Display remaining time on the 7-segment display
-// 3. Animate a spinning clock while time > 9 seconds
-// 4. Flash LEDs for correct / incorrect answers
-//
-// This controller is updated every loop() frame via update().
-// ------------------------------------------------------------
 class TestController {
 public:
   TestController() {
@@ -222,25 +205,6 @@ private:
   }
 };
 
-/*
-ScreenController
-
-PASOKO ENGINE
-Lightweight UI state machine that avoids unnecessary LCD redraws.
-
-Flow:
-1. Normal frame → currScreen == prevScreen → no redraw
-2. setScreen() → currScreen changes but old screen still visible
-3. Next frame → shouldRedraw() == true → new screen draws
-4. prevScreen updated → system stabilizes
-
-This ensures screens only redraw once after a transition.
-
-Use:
-- setScreen(screen) → navigate to another screen
-- setState() → force redraw of current screen (like Flutter setState)
-- shouldRedraw() → check if UI should draw this frame
-*/
 class ScreenController {
 public:
   Screen currScreen, prevScreen;
@@ -392,6 +356,7 @@ private:
     byte opCount = 0;
     char ops[4];
 
+    // no break switch bc i was reading about it
     switch (diff) {
       case HARD:
         ops[opCount++] = '/';
@@ -679,7 +644,7 @@ void mainMenuInfo(char key) {
   if (ui.shouldRedraw()) {
     ui.clear();
     if (page == 0) {
-      ui.write(4, 0, F("GROUP 1"));
+      ui.write(4, 0, F("GROUP ?"));
       ui.write(4, 1, F("MEMBERS"));
     } else if (page == 1) {
       ui.write(0, 0, F("1.HarpCheemse"));
