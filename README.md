@@ -1,6 +1,7 @@
 ## 🎮 Features
 
 This system includes **two embedded mini-games** built on top of the PASOKO ENGINE UI framework:
+![Tinkercad](assets/Pasoko.png)
 
 ---
 
