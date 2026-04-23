@@ -1,6 +1,9 @@
+## Demo
+[Demo](https://www.tinkercad.com/things/eysp5VHWKSb-pasoko)
+
 ## 🎮 Features
 
-This system includes **two embedded mini-games** built on top of the PASOKO ENGINE UI framework:
+This system includes **two embedded mini-games** built on top of the PASOKO ENGINE UI framework
 ![Tinkercad](assets/Pasoko.png)
 
 ---
@@ -90,3 +93,7 @@ Both games are managed by a **custom screen rendering engine (PASOKO ENGINE)**:
 Here is an example of the system in action:
 
 ![Main Menu](assets/pasoko.jpg)
+
+## Author's Comments
+Yes i used Chat to generated this md file.
+Fun fact about pasoko name: I was studying Japaneses and my dumbass misremembered Pansokon(PC) to Pasoko. 
